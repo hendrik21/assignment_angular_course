@@ -26,6 +26,12 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 
+import {LeaderService} from './services/leader.service';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +40,9 @@ import { HeaderComponent } from './header/header.component';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +54,13 @@ import { HeaderComponent } from './header/header.component';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
   providers: [DishService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+        LoginComponent
+  ],
 })
 export class AppModule { }
